@@ -7,31 +7,79 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
+import FocusEntity
 
 struct ContentView : View {
+    @State private var isPlacementEnabled = false
+    
+    @State private var selectedPlant: Plant?
+    @State private var plantConfirmedForPlacement: Plant?
+    
     var body: some View {
-        return ARViewContainer().edgesIgnoringSafeArea(.all)
+        ZStack(alignment: .bottom){
+            ARViewContainer(plantConfirmedForPlacement: $plantConfirmedForPlacement, isPlacementEnabled: $isPlacementEnabled)
+
+            if(isPlacementEnabled){
+                ConfirmationButtonsView(isPlacementEnabled: $isPlacementEnabled, selectedPlant: $selectedPlant, plantConfirmedForPlacement: $plantConfirmedForPlacement)
+            }
+            else{
+                PlantPickerView(isPlacementEnabled: $isPlacementEnabled, selectedPlant: $selectedPlant)
+            }
+        }
     }
 }
 
 struct ARViewContainer: UIViewRepresentable {
-    
+    @Binding var plantConfirmedForPlacement: Plant?
+    @Binding var isPlacementEnabled: Bool
+
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
         
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = [ .horizontal ]
+        config.environmentTexturing = .automatic
         
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
+            config.sceneReconstruction = .mesh
+        }
+        
+        arView.session.run(config)
+        arView.showsLargeContentViewer = true
+        
+        arView.clipsToBounds = true
+        
+        _ = FocusEntity(on: arView, style: .classic)
+//        focusEntity.isEnabled = isPlacementEnabled
+        
+        let arCoaching = ARCoachingOverlayView()
+        
+        arCoaching.goal = .horizontalPlane
+        arCoaching.session = arView.session
+        arCoaching.autoresizingMask = [ .flexibleWidth, .flexibleHeight ]
+        
+        arView.addSubview(arCoaching)
         
         return arView
-        
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {}
-    
+    func updateUIView(_ uiView: ARView, context: Context) {
+        if let plantModel = plantConfirmedForPlacement {
+            if let modelEntity = plantModel.modelEntity {
+                let anchorEntity = AnchorEntity(plane: .any)
+                
+                anchorEntity.addChild(modelEntity.clone(recursive: true))
+                
+                uiView.scene.addAnchor(anchorEntity)
+            }
+            
+            DispatchQueue.main.async {
+                plantConfirmedForPlacement = nil                
+            }
+        }
+    }
 }
 
 #if DEBUG

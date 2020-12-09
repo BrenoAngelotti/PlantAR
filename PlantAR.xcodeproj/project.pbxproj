@@ -3,17 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D39F9C34251FD36C009D449A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C33251FD36C009D449A /* AppDelegate.swift */; };
+		D311853825201E9D00F7B29F /* espada_de_sao_jorge-1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = D311853725201E9D00F7B29F /* espada_de_sao_jorge-1.usdz */; };
+		D311854325201F9A00F7B29F /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D311854225201F9A00F7B29F /* Plant.swift */; };
+		D36DE8B62521B21D005E281D /* costela_de_adao.usdz in Resources */ = {isa = PBXBuildFile; fileRef = D36DE8B52521B21D005E281D /* costela_de_adao.usdz */; };
+		D39D0A97252FB6790022E3A0 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = D39D0A96252FB6790022E3A0 /* FocusEntity */; };
+		D39D0AB9252FB79B0022E3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C33251FD36C009D449A /* AppDelegate.swift */; };
 		D39F9C36251FD36C009D449A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C35251FD36C009D449A /* ContentView.swift */; };
-		D39F9C38251FD36C009D449A /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C37251FD36C009D449A /* Experience.rcproject */; };
 		D39F9C3A251FD36F009D449A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39F9C39251FD36F009D449A /* Assets.xcassets */; };
 		D39F9C3D251FD36F009D449A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39F9C3C251FD36F009D449A /* Preview Assets.xcassets */; };
 		D39F9C48251FD370009D449A /* PlantARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C47251FD370009D449A /* PlantARTests.swift */; };
 		D39F9C53251FD370009D449A /* PlantARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C52251FD370009D449A /* PlantARUITests.swift */; };
+		D39F9C67251FD433009D449A /* PlantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C66251FD432009D449A /* PlantDetailsView.swift */; };
+		D39F9C78251FF0E2009D449A /* PlantPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C77251FF0E2009D449A /* PlantPickerView.swift */; };
+		D39F9C7D251FF179009D449A /* PlantPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C7C251FF179009D449A /* PlantPickerViewModel.swift */; };
+		D39F9C82251FF2B7009D449A /* PlantPickerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C81251FF2B7009D449A /* PlantPickerButtonView.swift */; };
+		D39F9C87251FF574009D449A /* ConfirmationButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9C86251FF574009D449A /* ConfirmationButtonsView.swift */; };
+		D3E94060252215B300F86234 /* espada_de_sao_jorge.usdz in Resources */ = {isa = PBXBuildFile; fileRef = D3E9405F252215B300F86234 /* espada_de_sao_jorge.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D311853725201E9D00F7B29F /* espada_de_sao_jorge-1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "espada_de_sao_jorge-1.usdz"; sourceTree = "<group>"; };
+		D311854225201F9A00F7B29F /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		D36DE8B52521B21D005E281D /* costela_de_adao.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = costela_de_adao.usdz; sourceTree = "<group>"; };
 		D39F9C30251FD36C009D449A /* PlantAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39F9C33251FD36C009D449A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D39F9C35251FD36C009D449A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D39F9C37251FD36C009D449A /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		D39F9C39251FD36F009D449A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D39F9C3C251FD36F009D449A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D39F9C3E251FD36F009D449A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +58,12 @@
 		D39F9C4E251FD370009D449A /* PlantARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39F9C52251FD370009D449A /* PlantARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantARUITests.swift; sourceTree = "<group>"; };
 		D39F9C54251FD370009D449A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D39F9C66251FD432009D449A /* PlantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailsView.swift; sourceTree = "<group>"; };
+		D39F9C77251FF0E2009D449A /* PlantPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPickerView.swift; sourceTree = "<group>"; };
+		D39F9C7C251FF179009D449A /* PlantPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPickerViewModel.swift; sourceTree = "<group>"; };
+		D39F9C81251FF2B7009D449A /* PlantPickerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPickerButtonView.swift; sourceTree = "<group>"; };
+		D39F9C86251FF574009D449A /* ConfirmationButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationButtonsView.swift; sourceTree = "<group>"; };
+		D3E9405F252215B300F86234 /* espada_de_sao_jorge.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = espada_de_sao_jorge.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39D0A97252FB6790022E3A0 /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +92,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D39D0A95252FB6790022E3A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D39F9C27251FD36C009D449A = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,7 @@
 				D39F9C46251FD370009D449A /* PlantARTests */,
 				D39F9C51251FD370009D449A /* PlantARUITests */,
 				D39F9C31251FD36C009D449A /* Products */,
+				D39D0A95252FB6790022E3A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +123,12 @@
 		D39F9C32251FD36C009D449A /* PlantAR */ = {
 			isa = PBXGroup;
 			children = (
+				D39F9C6E251FDD0D009D449A /* 3DModels */,
+				D39F9C65251FD401009D449A /* ViewModels */,
+				D39F9C64251FD3FC009D449A /* Views */,
+				D39F9C63251FD3F4009D449A /* Models */,
 				D39F9C33251FD36C009D449A /* AppDelegate.swift */,
 				D39F9C35251FD36C009D449A /* ContentView.swift */,
-				D39F9C37251FD36C009D449A /* Experience.rcproject */,
 				D39F9C39251FD36F009D449A /* Assets.xcassets */,
 				D39F9C3E251FD36F009D449A /* Info.plist */,
 				D39F9C3B251FD36F009D449A /* Preview Content */,
@@ -133,6 +162,43 @@
 			path = PlantARUITests;
 			sourceTree = "<group>";
 		};
+		D39F9C63251FD3F4009D449A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D311854225201F9A00F7B29F /* Plant.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D39F9C64251FD3FC009D449A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D39F9C66251FD432009D449A /* PlantDetailsView.swift */,
+				D39F9C77251FF0E2009D449A /* PlantPickerView.swift */,
+				D39F9C81251FF2B7009D449A /* PlantPickerButtonView.swift */,
+				D39F9C86251FF574009D449A /* ConfirmationButtonsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D39F9C65251FD401009D449A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D39F9C7C251FF179009D449A /* PlantPickerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D39F9C6E251FDD0D009D449A /* 3DModels */ = {
+			isa = PBXGroup;
+			children = (
+				D311853725201E9D00F7B29F /* espada_de_sao_jorge-1.usdz */,
+				D36DE8B52521B21D005E281D /* costela_de_adao.usdz */,
+				D3E9405F252215B300F86234 /* espada_de_sao_jorge.usdz */,
+			);
+			path = 3DModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +215,9 @@
 			dependencies = (
 			);
 			name = PlantAR;
+			packageProductDependencies = (
+				D39D0A96252FB6790022E3A0 /* FocusEntity */,
+			);
 			productName = PlantAR;
 			productReference = D39F9C30251FD36C009D449A /* PlantAR.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +289,9 @@
 				Base,
 			);
 			mainGroup = D39F9C27251FD36C009D449A;
+			packageReferences = (
+				D31185472520327400F7B29F /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = D39F9C31251FD36C009D449A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -238,6 +310,9 @@
 			files = (
 				D39F9C3D251FD36F009D449A /* Preview Assets.xcassets in Resources */,
 				D39F9C3A251FD36F009D449A /* Assets.xcassets in Resources */,
+				D311853825201E9D00F7B29F /* espada_de_sao_jorge-1.usdz in Resources */,
+				D3E94060252215B300F86234 /* espada_de_sao_jorge.usdz in Resources */,
+				D36DE8B62521B21D005E281D /* costela_de_adao.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39D0AB9252FB79B0022E3A0 /* AppDelegate.swift in Sources */,
+				D39F9C82251FF2B7009D449A /* PlantPickerButtonView.swift in Sources */,
+				D39F9C78251FF0E2009D449A /* PlantPickerView.swift in Sources */,
 				D39F9C36251FD36C009D449A /* ContentView.swift in Sources */,
-				D39F9C34251FD36C009D449A /* AppDelegate.swift in Sources */,
-				D39F9C38251FD36C009D449A /* Experience.rcproject in Sources */,
+				D39F9C7D251FF179009D449A /* PlantPickerViewModel.swift in Sources */,
+				D39F9C67251FD433009D449A /* PlantDetailsView.swift in Sources */,
+				D311854325201F9A00F7B29F /* Plant.swift in Sources */,
+				D39F9C87251FF574009D449A /* ConfirmationButtonsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -406,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -421,6 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantAR/Preview Content\"";
 				DEVELOPMENT_TEAM = T86A8TPAQ2;
@@ -432,6 +513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Angelotti.PlantAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -442,6 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantAR/Preview Content\"";
 				DEVELOPMENT_TEAM = T86A8TPAQ2;
@@ -453,6 +536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Angelotti.PlantAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -582,6 +666,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D31185472520327400F7B29F /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D39D0A96252FB6790022E3A0 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D31185472520327400F7B29F /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D39F9C28251FD36C009D449A /* Project object */;
 }
