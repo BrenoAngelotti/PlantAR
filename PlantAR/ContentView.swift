@@ -11,9 +11,9 @@ import ARKit
 import FocusEntity
 
 struct ContentView : View {
-    @State private var isPlacementEnabled = false
+    @State var selectedPlant: Plant?
     
-    @State private var selectedPlant: Plant?
+    @State private var isPlacementEnabled = false
     @State private var plantConfirmedForPlacement: Plant?
     
     var body: some View {

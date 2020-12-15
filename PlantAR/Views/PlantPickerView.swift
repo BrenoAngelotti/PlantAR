@@ -9,8 +9,6 @@ import SwiftUI
 
 struct PlantPickerView: View {
     @ObservedObject private var viewModel = PlantPickerViewModel()
-    
-    @State private var plantDetail: Plant? = nil
     @State private var isShowingDetail = false
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedPlant: Plant?
@@ -21,14 +19,14 @@ struct PlantPickerView: View {
             ScrollView(.horizontal, showsIndicators: false){
                 HStack(spacing: 0){
                     ForEach(viewModel.plants){plant in
-                        PlantPickerButtonView(plant: plant, plantDetail: $plantDetail, isShowingDetail: $isShowingDetail, isPlacementEnabled: $isPlacementEnabled, selectedPlant: $selectedPlant)
+                        PlantPickerButtonView(plant: plant, isShowingDetail: $isShowingDetail, isPlacementEnabled: $isPlacementEnabled, selectedPlant: $selectedPlant)
                     }
                 }
             }
             .background(Color(.black).opacity(0.5))
         }
         .sheet(isPresented: $isShowingDetail) {
-            PlantDetailsView(plant: $plantDetail)
+            PlantDetailsView(plant: $selectedPlant)
         }
     }
 }

@@ -10,9 +10,7 @@ import SwiftUI
 struct PlantPickerButtonView: View {
     var plant: Plant
     
-    @Binding var plantDetail: Plant?
     @Binding var isShowingDetail: Bool
-    
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedPlant: Plant?
     
@@ -28,7 +26,7 @@ struct PlantPickerButtonView: View {
                     HStack{
                         Spacer()
                         Button(action: {
-                            plantDetail = plant
+                            selectedPlant = plant
                             isShowingDetail.toggle()
                         }){
                             Image(systemName: "info.circle")
@@ -58,6 +56,6 @@ struct PlantPickerButtonView: View {
 
 struct PlantPickerButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantPickerButtonView(plant: Plant(id: "espada_de_sao_jorge", name: "Espada de São Jorge", scientificName: "Dracaena trifasciata", info: "Apodrecerá facilmente se for regado em excesso. É comumente recomendado para iniciantes interessados no cultivo de plantas de interior pela sua facilidade de cuidado.", extraInfo: "Nas Religiões afro-brasileiras, ela é também chamada de espada-de-ogum (quando tem coloração verde) ou espada-de-iansã (bicolor, com bordas amarelas). Esta folha sagrada é uma folha gún (excitante, \"quente\"), sempre presente nos rituais de sasanha e na realização de águas sagradas denominada de abô.", difficulty: 2, water: 1), plantDetail: .constant(nil), isShowingDetail: .constant(false), isPlacementEnabled: .constant(false), selectedPlant: .constant(nil))
+        PlantPickerButtonView(plant: Plant(id: "espada_de_sao_jorge", name: "Espada de São Jorge", scientificName: "Dracaena trifasciata", info: "Apodrecerá facilmente se for regado em excesso. É comumente recomendado para iniciantes interessados no cultivo de plantas de interior pela sua facilidade de cuidado.", extraInfo: "Nas Religiões afro-brasileiras, ela é também chamada de espada-de-ogum (quando tem coloração verde) ou espada-de-iansã (bicolor, com bordas amarelas). Esta folha sagrada é uma folha gún (excitante, \"quente\"), sempre presente nos rituais de sasanha e na realização de águas sagradas denominada de abô.", difficulty: 2, water: 1), isShowingDetail: .constant(false), isPlacementEnabled: .constant(false), selectedPlant: .constant(nil))
     }
 }
