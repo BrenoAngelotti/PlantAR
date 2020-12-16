@@ -7,8 +7,6 @@
 
 import Foundation
 import CoreSpotlight
-//import MobileCoreServices
-//import UIKit
 
 class PlantPickerViewModel: ObservableObject {
     @Published var plants: [Plant] = []
@@ -35,6 +33,8 @@ class PlantPickerViewModel: ObservableObject {
 //                plants.append(Plant(id: $0, name: $0, scientificName: $0, info: $0, extraInfo: $0))
 //            }
 //        )
+        
+        
         plants = [
             Plant(id: "espada_de_sao_jorge", name: "Espada de São Jorge", scientificName: "Dracaena trifasciata", info: "Apodrecerá facilmente se for regado em excesso. É comumente recomendado para iniciantes interessados no cultivo de plantas de interior pela sua facilidade de cuidado.", extraInfo: "Nas Religiões afro-brasileiras, ela é também chamada de espada-de-ogum (quando tem coloração verde) ou espada-de-iansã (bicolor, com bordas amarelas). Esta folha sagrada é uma folha gún (excitante, \"quente\"), sempre presente nos rituais de sasanha e na realização de águas sagradas denominada de abô.", difficulty: 2, water: 1),
             Plant(id: "costela_de_adao", name: "Costela de Adão", scientificName: "Mostera deliciosa", info: "Força e resistência são adjetivos ideais para definir a Costela-de-adão, pois elas podem se adaptar com rapidez a quase todo tipo de ambiente. A espécie tem se tornado uma opção exótica para decorar pequenos jardins, varandas ou mesmo ambientes internos. A Costela de Adão é indicada como a planta do momento pelos profissionais de paisagismo e vem se destacando, também, no meio da moda.", extraInfo: "A espécie é nativa do México e é mundialmente cultivada como ornamental pelas belas e peculiares folhas, com segmentos que lembram costelas. Seu fruto é comestível e muito saboroso, daí seu nome científico, Monstera deliciosa.", difficulty: 1, water: 2)
@@ -43,18 +43,27 @@ class PlantPickerViewModel: ObservableObject {
         indexToSpotlight()
     }
     
+    func loadPlant(withId id:String) -> Plant?{
+        return plants.first(where: { $0.id == id })
+    }
+    
     func indexToSpotlight(){
         var items: [CSSearchableItem] = []
         
         for plant in plants {
             let attributes = CSSearchableItemAttributeSet(itemContentType: "com.Angelotti.PlantAR.plant")
-            attributes.title = plant.name
-//            attributes.thumbnailData = UIImage(plant.picture)
-            attributes.contentDescription = plant.extraInfo
             attributes.identifier = plant.id
             attributes.relatedUniqueIdentifier = plant.id
+            attributes.title = plant.name
             
-            items.append(CSSearchableItem(uniqueIdentifier: "plant-\(plant.id)", domainIdentifier: "plants", attributeSet: attributes))
+            if(plant.extraInfo != nil){
+                attributes.contentDescription = "\(plant.scientificName)\n\(plant.extraInfo!)"
+            }
+            else{
+                attributes.contentDescription = plant.scientificName
+            }
+            
+            items.append(CSSearchableItem(uniqueIdentifier: plant.id, domainIdentifier: "plants", attributeSet: attributes))
         }
         
         CSSearchableIndex.default().indexSearchableItems(items) { (error) in

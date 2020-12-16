@@ -12,6 +12,7 @@ struct PlantPickerView: View {
     @State private var isShowingDetail = false
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedPlant: Plant?
+    @Binding var activityPlantId: String?
 
     var body: some View {
         VStack{
@@ -28,11 +29,25 @@ struct PlantPickerView: View {
         .sheet(isPresented: $isShowingDetail) {
             PlantDetailsView(plant: $selectedPlant)
         }
+        .onChange(of: activityPlantId, perform: { value in
+            if(value != nil){
+                loadActivityPlant()
+            }
+        })
+    }
+    
+    
+    func loadActivityPlant(){
+        if let plant = viewModel.loadPlant(withId: activityPlantId!){
+            selectedPlant = plant
+            isShowingDetail.toggle()
+            activityPlantId = nil
+        }
     }
 }
 
 struct PlantPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantPickerView(isPlacementEnabled: .constant(false), selectedPlant: .constant(nil))
+        PlantPickerView(isPlacementEnabled: .constant(false), selectedPlant: .constant(nil), activityPlantId: .constant(nil))
     }
 }

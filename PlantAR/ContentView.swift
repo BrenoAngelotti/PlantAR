@@ -11,7 +11,8 @@ import ARKit
 import FocusEntity
 
 struct ContentView : View {
-    @State var selectedPlant: Plant?
+    @Binding var activityPlantId: String?
+    @State private var selectedPlant: Plant?
     
     @State private var isPlacementEnabled = false
     @State private var plantConfirmedForPlacement: Plant?
@@ -24,7 +25,10 @@ struct ContentView : View {
                 ConfirmationButtonsView(isPlacementEnabled: $isPlacementEnabled, selectedPlant: $selectedPlant, plantConfirmedForPlacement: $plantConfirmedForPlacement)
             }
             else{
-                PlantPickerView(isPlacementEnabled: $isPlacementEnabled, selectedPlant: $selectedPlant)
+                PlantPickerView(
+                    isPlacementEnabled: $isPlacementEnabled,
+                    selectedPlant: $selectedPlant,
+                    activityPlantId: $activityPlantId)
             }
         }
     }
@@ -85,7 +89,7 @@ struct ARViewContainer: UIViewRepresentable {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(activityPlantId: .constant(nil))
     }
 }
 #endif
