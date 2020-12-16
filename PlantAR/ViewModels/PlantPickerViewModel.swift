@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreSpotlight
+import UIKit
 
 class PlantPickerViewModel: ObservableObject {
     @Published var plants: [Plant] = []
@@ -55,12 +56,13 @@ class PlantPickerViewModel: ObservableObject {
             attributes.identifier = plant.id
             attributes.relatedUniqueIdentifier = plant.id
             attributes.title = plant.name
+            attributes.thumbnailData = UIImage(named: plant.picture)?.jpegData(compressionQuality: 1)
             
             if(plant.extraInfo != nil){
-                attributes.contentDescription = "\(plant.scientificName)\n\(plant.extraInfo!)"
+                attributes.contentDescription = "/\(plant.scientificName)/\n\(plant.extraInfo!)"
             }
             else{
-                attributes.contentDescription = plant.scientificName
+                attributes.contentDescription = "/\(plant.scientificName)/"
             }
             
             items.append(CSSearchableItem(uniqueIdentifier: plant.id, domainIdentifier: "plants", attributeSet: attributes))
